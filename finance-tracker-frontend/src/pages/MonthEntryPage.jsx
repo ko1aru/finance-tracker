@@ -19,7 +19,7 @@ const MonthEntryPage = () => {
 
     const fetchEntryData = () => {
         setLoading(true);
-        fetch(`http://spring-app:8080/api/${month}-${year}`)
+        fetch(`http://localhost:8080/api/${month}-${year}`)
             .then((res) => {
                 if (!res.ok) throw new Error("Entry not found");
                 return res.json();
@@ -66,7 +66,7 @@ const MonthEntryPage = () => {
     };
 
     const handleExpenseSubmit = (payload) => {
-        fetch(`http://spring-app:8080/api/${entry.month}-${year}/add-expense`, {
+        fetch(`http://localhost:8080/api/${entry.month}-${year}/add-expense`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

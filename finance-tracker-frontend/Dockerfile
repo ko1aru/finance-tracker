@@ -2,7 +2,7 @@
 FROM node:22 AS builder
 WORKDIR /fin-app
 COPY . .
-# ENV REACT_APP_BACKEND_URL=http://spring-app:8080
+# ENV REACT_APP_BACKEND_URL=http://localhost:8080
 RUN npm install
 RUN npm run build
 

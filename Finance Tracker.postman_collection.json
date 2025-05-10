@@ -246,7 +246,7 @@
 	"variable": [
 		{
 			"key": "base_url",
-			"value": "http:spring-app:8080/api",
+			"value": "http:localhost:8080/api",
 			"type": "string"
 		}
 	]
