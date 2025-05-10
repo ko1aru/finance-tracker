@@ -1,0 +1,50 @@
+.year-header {
+    cursor: pointer;
+    user-select: none;
+    margin-bottom: 5px;
+    transition: color 0.2s ease;
+}
+
+.year-header:hover {
+    color: #007bff;
+}
+
+/* Group Header Styling */
+#year-month-entries-table th {
+    background-color: #ddefff;
+    text-align: center;
+    border-bottom: 1px solid #b3d9ff;
+    padding: 8px;
+    color: #001f34;
+}
+
+/* Styling for grouped headers */
+#year-month-entries-table th[colspan="3"],
+#year-month-entries-table th[colspan="2"],
+#year-month-entries-table th[colspan="4"] {
+    background-color: #bce6ff;
+    font-weight: bold;
+    border-bottom: 2px solid #99d9ff;
+}
+
+/* Border separation for better readability */
+#year-month-entries-table th[rowspan="2"] {
+    background-color: #bce6ff;
+}
+
+/* Table Row Hover Effect */
+#year-month-entries-table tbody tr:hover {
+    background-color: #e3f2fd;
+    cursor: pointer;
+}
+
+/* Table borders and spacing */
+#year-month-entries-table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+#year-month-entries-table th, #year-month-entries-table td {
+    border: 1px solid #b3d9ff;
+}

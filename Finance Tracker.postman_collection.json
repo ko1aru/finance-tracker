@@ -1,0 +1,253 @@
+{
+	"info": {
+		"_postman_id": "2f620098-1e79-455b-b3b7-1946746aacbf",
+		"name": "Finance Tracker",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32606777"
+	},
+	"item": [
+		{
+			"name": "GET All Month Entries",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}",
+					"host": [
+						"{{base_url}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get by Month & Year",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/3-2024",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"3-2024"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add a Month Entry",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"month\": 3,\r\n    \"year\": 2024,\r\n    \"salary\": 20000.0,\r\n    \"sideIncome\": 0.0,\r\n    \"healthInsurance\": 0.0,\r\n    \"emergencyAcc\": 3000.0,\r\n    \"emi\": 5000.0,\r\n    \"stockInv\": 0.0,\r\n    \"expenseAcc\": 5000.0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "/api",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update month entry fields",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"salary\": 27000,\r\n    \"sideIncome\": 270,\r\n    \"healthInsurance\": 500,\r\n    \"emergencyAcc\": 5000\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/3-2024/update-fields",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"3-2024",
+						"update-fields"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Expenses",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/1-2025/expenses",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"1-2025",
+						"expenses"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Expense",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"misc\": 250,\r\n    \"fuel\": 150.0\r\n    // \"desc\": \"\",\r\n    // \"date\": \"02-05-2025\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/1-2025/add-expense",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"1-2025",
+						"add-expense"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete an Expense",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/1-2024/delete-expense/11",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"1-2024",
+						"delete-expense",
+						"11"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET EMIs",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/1-2024/emis",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"1-2024",
+						"emis"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add EMI",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"emi\": 1500,\r\n    \"description\": \"test emi\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/1-2024/add-emi",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"1-2024",
+						"add-emi"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete an EMI",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/1-2024/delete-emi/13",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"1-2024",
+						"delete-emi",
+						"13"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http:spring-app:8080/api",
+			"type": "string"
+		}
+	]
+}

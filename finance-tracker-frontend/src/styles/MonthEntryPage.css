@@ -1,0 +1,63 @@
+/* Month Entry Table */
+table.month-entry-table {
+    width: 50%;
+    border-collapse: collapse;
+}
+
+td,
+th {
+    padding: 5px 10px;
+    max-width: 150px;
+    text-align: left;
+    word-wrap: break-word;
+    border: 1px solid #ddd;
+}
+
+/* Add Buttons Container */
+.add-buttons-row {
+    display: flex;
+    align-items: center;
+}
+
+.add-btn {
+    background-color: #2980b9;
+    color: white;
+    border: none;
+    padding: 4px 0px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    width: 100px;
+}
+
+.clickable-row {
+    cursor: pointer;
+    background-color: #f9f9f9;
+    transition: background-color 0.2s ease;
+}
+
+.clickable-row:hover {
+    background-color: #e0e0e0;
+}
+
+/* For the clickable header */
+.year-header {
+    cursor: pointer;
+    font-size: 1.5em;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: color 0.2s ease;
+}
+
+.year-header:hover {
+    color: #007bff;
+}
+
+/* Smooth collapse/expand animation */
+.month-entry-table {
+    width: 100%;
+    margin-top: 10px;
+    border-collapse: collapse;
+    transition: max-height 0.3s ease-out;
+}
