@@ -11,7 +11,7 @@ const MonthEntryList = () => {
     const [expandedYear, setExpandedYear] = useState(currentYear);
 
     useEffect(() => {
-        fetch("http://localhost:8080/api")
+        fetch("/api")
             .then((res) => {
                 if (!res.ok) throw new Error("Failed to fetch entries");
                 return res.json();

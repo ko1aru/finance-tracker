@@ -27,7 +27,7 @@ const MonthRow = ({ entry }) => {
 
   const handleSave = async () => {
     try {
-      await axios.put(`http://localhost:8080/api/${entry.month}-${entry.year}/update-fields`, formData);
+      await axios.put(`/api/${entry.month}-${entry.year}/update-fields`, formData);
       window.location.reload();
       setSuccessMessage("Fields updated successfully!");
       setTimeout(() => setSuccessMessage(""), 3000);

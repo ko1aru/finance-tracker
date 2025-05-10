@@ -19,7 +19,7 @@ const MonthEntryPage = () => {
 
     const fetchEntryData = () => {
         setLoading(true);
-        fetch(`http://localhost:8080/api/${month}-${year}`)
+        fetch(`/api/${month}-${year}`)
             .then((res) => {
                 if (!res.ok) throw new Error("Entry not found");
                 return res.json();
@@ -45,7 +45,7 @@ const MonthEntryPage = () => {
         //     .then((data) => setEmis(data))
         //     .catch((err) => console.error(err));
         try {
-            const response = await axios.get(`http://localhost:8080/api/${month}-${year}/emis`);
+            const response = await axios.get(`/api/${month}-${year}/emis`);
             setEmis(response.data);
         } catch (error) {
             console.error("Failed to fetch EMIs");
@@ -58,7 +58,7 @@ const MonthEntryPage = () => {
         //     .then((data) => setExpenses(data))
         //     .catch((err) => console.error(err));
         try {
-            const response = await axios.get(`http://localhost:8080/api/${month}-${year}/expenses`);
+            const response = await axios.get(`/api/${month}-${year}/expenses`);
             setExpenses(response.data);
         } catch (error) {
             console.error("Failed to fetch Expenses");
@@ -66,7 +66,7 @@ const MonthEntryPage = () => {
     };
 
     const handleExpenseSubmit = (payload) => {
-        fetch(`http://localhost:8080/api/${entry.month}-${year}/add-expense`, {
+        fetch(`/api/${entry.month}-${year}/add-expense`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -86,8 +86,8 @@ const MonthEntryPage = () => {
     };
 
     const handleEmiSubmit = (payload) => {
-        const url = `http://localhost:8080/api/${entry.month}-${year}/add-emi`;
-        fetch(url, {
+        // const url = `http://localhost:8080/api/${entry.month}-${year}/add-emi`;
+        fetch(`/api/${entry.month}-${year}/add-emi`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(payload),
