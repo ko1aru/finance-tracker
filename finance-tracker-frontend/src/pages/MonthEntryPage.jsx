@@ -19,7 +19,8 @@ const MonthEntryPage = () => {
 
     const fetchEntryData = () => {
         setLoading(true);
-        fetch(`http://spring-app:8080/api/${month}-${year}`)
+        // http://spring-app:8080
+        fetch(`/api/${month}-${year}`)
             .then((res) => {
                 if (!res.ok) throw new Error("Entry not found");
                 return res.json();
@@ -45,7 +46,8 @@ const MonthEntryPage = () => {
         //     .then((data) => setEmis(data))
         //     .catch((err) => console.error(err));
         try {
-            const response = await axios.get(`http://localhost:8080/api/${month}-${year}/emis`);
+            // http://localhost:8080
+            const response = await axios.get(`/api/${month}-${year}/emis`);
             setEmis(response.data);
         } catch (error) {
             console.error("Failed to fetch EMIs");
@@ -58,7 +60,8 @@ const MonthEntryPage = () => {
         //     .then((data) => setExpenses(data))
         //     .catch((err) => console.error(err));
         try {
-            const response = await axios.get(`http://localhost:8080/api/${month}-${year}/expenses`);
+            // http://localhost:8080
+            const response = await axios.get(`/api/${month}-${year}/expenses`);
             setExpenses(response.data);
         } catch (error) {
             console.error("Failed to fetch Expenses");
@@ -66,7 +69,8 @@ const MonthEntryPage = () => {
     };
 
     const handleExpenseSubmit = (payload) => {
-        fetch(`http://spring-app:8080/api/${entry.month}-${year}/add-expense`, {
+        // http://spring-app:8080
+        fetch(`/api/${entry.month}-${year}/add-expense`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -86,7 +90,8 @@ const MonthEntryPage = () => {
     };
 
     const handleEmiSubmit = (payload) => {
-        const url = `http://localhost:8080/api/${entry.month}-${year}/add-emi`;
+        // http://localhost:8080
+        const url = `/api/${entry.month}-${year}/add-emi`;
         fetch(url, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
