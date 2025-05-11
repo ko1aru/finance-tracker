@@ -6,6 +6,7 @@ const EmiPopup = ({ emis, month, year, onClose, refreshEmiData }) => {
     const handleDeleteEmi = async (emiId) => {
         if (window.confirm("Are you sure you want to delete this EMI?")) {
             try {
+                // http://localhost:8080
                 const response = await axios.delete(`/api/${month}-${year}/delete-emi/${emiId}`);
 
                 if (response.status === 200) {
@@ -72,6 +73,7 @@ const ExpensePopup = ({ onClose, expenses, month, year, refreshExpenseData }) =>
     const handleDeleteExpense = async (expenseId) => {
         if (window.confirm("Are you sure you want to delete this Expense?")) {
             try {
+                // http://localhost:8080
                 const response = await axios.delete(`/api/${month}-${year}/delete-expense/${expenseId}`);
 
                 if (response.status === 200) {

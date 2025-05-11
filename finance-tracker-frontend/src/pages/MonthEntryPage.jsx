@@ -19,6 +19,7 @@ const MonthEntryPage = () => {
 
     const fetchEntryData = () => {
         setLoading(true);
+        // http://spring-app:8080
         fetch(`/api/${month}-${year}`)
             .then((res) => {
                 if (!res.ok) throw new Error("Entry not found");
@@ -45,6 +46,7 @@ const MonthEntryPage = () => {
         //     .then((data) => setEmis(data))
         //     .catch((err) => console.error(err));
         try {
+            // http://localhost:8080
             const response = await axios.get(`/api/${month}-${year}/emis`);
             setEmis(response.data);
         } catch (error) {
@@ -58,6 +60,7 @@ const MonthEntryPage = () => {
         //     .then((data) => setExpenses(data))
         //     .catch((err) => console.error(err));
         try {
+            // http://localhost:8080
             const response = await axios.get(`/api/${month}-${year}/expenses`);
             setExpenses(response.data);
         } catch (error) {
@@ -66,6 +69,7 @@ const MonthEntryPage = () => {
     };
 
     const handleExpenseSubmit = (payload) => {
+        // http://spring-app:8080
         fetch(`/api/${entry.month}-${year}/add-expense`, {
             method: "POST",
             headers: {
@@ -86,6 +90,7 @@ const MonthEntryPage = () => {
     };
 
     const handleEmiSubmit = (payload) => {
+        // http://localhost:8080
         fetch(`/api/${entry.month}-${year}/add-emi`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
