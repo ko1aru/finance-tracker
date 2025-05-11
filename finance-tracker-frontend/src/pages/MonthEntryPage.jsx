@@ -86,7 +86,6 @@ const MonthEntryPage = () => {
     };
 
     const handleEmiSubmit = (payload) => {
-        // const url = `http://localhost:8080/api/${entry.month}-${year}/add-emi`;
         fetch(`/api/${entry.month}-${year}/add-emi`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
