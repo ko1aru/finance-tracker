@@ -13,6 +13,7 @@ const MonthEntryList = () => {
     useEffect(() => {
         // const baseUrl = process.env.REACT_APP_BACKEND_URL || '';
         fetch('/api')
+
             .then((res) => {
                 if (!res.ok) throw new Error("Failed to fetch entries");
                 return res.json();
