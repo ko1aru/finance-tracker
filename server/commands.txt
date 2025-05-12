@@ -1,5 +1,5 @@
 1️⃣ Build Docker Images Locally
-# In your project directory
+# In project directory
 docker build -t financetracker-spring-app -f Dockerfile .
 docker build -t financetracker-react-app -f finance-tracker-frontend/Dockerfile .
 
