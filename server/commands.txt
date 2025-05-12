@@ -1,0 +1,16 @@
+1️⃣ Build Docker Images Locally
+# In your project directory
+docker build -t financetracker-spring-app -f Dockerfile .
+docker build -t financetracker-react-app -f finance-tracker-frontend/Dockerfile .
+
+2️⃣ Save the Images to .tar Files
+docker save -o spring-app.tar financetracker-spring-app
+docker save -o react-app.tar financetracker-react-app
+
+3️⃣ Transfer Files to Ubuntu VM
+scp spring-app.tar user@your-vm-ip:/home/user/
+scp react-app.tar user@your-vm-ip:/home/user/
+
+4️⃣ Load the Images on Ubuntu VM
+docker load -i spring-app.tar
+docker load -i react-app.tar
