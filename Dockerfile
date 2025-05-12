@@ -8,4 +8,3 @@ COPY target/FinanceTracker-0.0.1-SNAPSHOT.jar fin-app.jar
 EXPOSE 8080
 # 5. Run the application
 ENTRYPOINT ["java", "-jar", "fin-app.jar"]
-

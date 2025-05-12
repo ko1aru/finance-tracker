@@ -1,0 +1,17 @@
+services:
+  spring-app:
+    image: financetracker-spring-app
+    ports:
+      - "8080:8080"
+    networks:
+      - spring-network
+
+  react-app:
+    image: financetracker-react-app
+    ports:
+      - "3000:3000"
+    networks:
+      - spring-network
+
+networks:
+  spring-network:
