@@ -5,6 +5,8 @@ WORKDIR /fin-app
 # 3. Copy the application JAR file to the container
 # COPY target/FinanceTracker-0.0.1-SNAPSHOT.jar fin-app.jar
 COPY . .
+# Grant execute permission to mvnw
+RUN chmod +x ./mvnw
 RUN ./mvnw clean package -DskipTests
 # 4. Expose the port that Spring Boot runs on
 EXPOSE 8080
