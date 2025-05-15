@@ -18,7 +18,7 @@ services:
     #   SPRING_DATASOURCE_DRIVER-CLASS-NAME: com.mysql.cj.jdbc.Driver
     #   SPRING_JPA_HIBERNATE_DDL-AUTO: update
     networks:
-      - spring-network
+      - finance-network
     # restart: unless-stopped
 
   # mysql-db:
@@ -54,12 +54,13 @@ services:
     depends_on:
       - spring-app
     networks:
-      - spring-network
+      - finance-network
     # extra_hosts:
     #   - "spring-app:host.docker.internal"
 
 networks:
-  spring-network:
+  finance-network:
+    driver: bridge
 
 # volumes:
 #   db_data:
