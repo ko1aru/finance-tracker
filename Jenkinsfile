@@ -26,6 +26,12 @@ pipeline {
     }
     
     post {
+        success {
+            echo 'Deployment successful!'
+        }
+        failure {
+            echo 'Deployment failed!'
+        }
         always {
             echo 'Cleaning up unused images...'
             sh 'docker image prune -f'

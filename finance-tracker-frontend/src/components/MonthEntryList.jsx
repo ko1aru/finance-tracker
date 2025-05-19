@@ -71,37 +71,39 @@ const MonthEntryList = () => {
                                 transition={{ duration: 0.3, ease: "easeInOut" }}
                                 style={{ overflow: "hidden" }}
                             >
-                                <table border="1" cellPadding="8" id="year-month-entries-table">
-                                    <thead>
-                                        <tr>
-                                            <th rowSpan="2">Month</th>
-                                            <th colSpan="3">Income</th>
-                                            <th rowSpan="2">Health Insurance</th>
-                                            <th colSpan="2">Investment</th>
-                                            <th rowSpan="2">EMI</th>
-                                            <th colSpan="4">Expenses</th>
-                                            <th rowSpan="2">Amount Left</th>
-                                            <th rowSpan="2">Account Balance</th>
-                                            <th rowSpan="2">Actions</th>
-                                        </tr>
-                                        <tr>
-                                            <th>Salary</th>
-                                            <th>Side Income</th>
-                                            <th>Total</th>
-                                            <th>Emergency Account</th>
-                                            <th>Stock</th>
-                                            <th>Expense Account</th>
-                                            <th>Misc</th>
-                                            <th>Fuel</th>
-                                            <th>Balance</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        {entries.map((entry, index) => (
-                                            <MonthRow className='clickable-row' key={entry.id ?? `${entry.month}-${entry.year}-${index}`} entry={entry} />
-                                        ))}
-                                    </tbody>
-                                </table>
+                                <div className="table-scroll-wrapper">
+                                    <table border="1" cellPadding="8" id="year-month-entries-table">
+                                        <thead>
+                                            <tr>
+                                                <th rowSpan="2">Month</th>
+                                                <th colSpan="3">Income</th>
+                                                <th rowSpan="2">Health Insurance</th>
+                                                <th colSpan="2">Investment</th>
+                                                <th rowSpan="2">EMI</th>
+                                                <th colSpan="4">Expenses</th>
+                                                <th rowSpan="2">Amount Left</th>
+                                                <th rowSpan="2">Account Balance</th>
+                                                <th rowSpan="2">Actions</th>
+                                            </tr>
+                                            <tr>
+                                                <th>Salary</th>
+                                                <th>Side Income</th>
+                                                <th>Total</th>
+                                                <th>Emergency Account</th>
+                                                <th>Stock</th>
+                                                <th>Expense Account</th>
+                                                <th>Misc</th>
+                                                <th>Fuel</th>
+                                                <th>Balance</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {entries.map((entry, index) => (
+                                                <MonthRow className='clickable-row' key={entry.id ?? `${entry.month}-${entry.year}-${index}`} entry={entry} />
+                                            ))}
+                                        </tbody>
+                                    </table>
+                                </div>
                             </motion.div>
                         )}
                     </AnimatePresence>

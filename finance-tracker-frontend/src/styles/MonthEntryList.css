@@ -42,9 +42,16 @@
 #year-month-entries-table {
     border-collapse: collapse;
     width: 100%;
+    min-width: 1200px;
     margin-bottom: 20px;
 }
 
 #year-month-entries-table th, #year-month-entries-table td {
     border: 1px solid #b3d9ff;
+}
+
+.table-scroll-wrapper {
+    overflow-x: auto;
+    max-width: 100%;
+    margin-bottom: 10px;
 }
